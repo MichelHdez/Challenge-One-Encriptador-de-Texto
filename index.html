@@ -18,7 +18,7 @@
     <main>
         <div class="main">
             <div class="left">
-                <textarea class="ingresar__texto" id="ingresarTexto" placeholder="Ingrese el texto aquí"></textarea>
+                <textarea class="ingresar__texto" id="ingresarTexto"  onkeypress="return ' abcdefghijklmnñopqrstuvwxyz'.includes(event.key)" placeholder="Ingrese el texto aquí"></textarea>
                 <div class="left__footer">
                     <img src="img/exclamacion.svg" alt="exclamacion">
                     <span class="left__info">Solo letras minúsculas y sin acentos</span>

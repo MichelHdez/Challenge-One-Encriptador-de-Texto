@@ -7,6 +7,25 @@ const munheco = document.getElementById('munheco');
 const mensajeInfo = document.getElementById('mensajeInfo');
 const right = document.getElementById('right');
 
+function soloLetras(e) {
+    let key = e.keyCode || e.which,
+      tecla = String.fromCharCode(key).toLowerCase(),
+      letras = " áéíóúabcdefghijklmnñopqrstuvwxyz",
+      especiales = [8, 37, 39, 46],
+      tecla_especial = false;
+
+    for (let i in especiales) {
+      if (key == especiales[i]) {
+        tecla_especial = true;
+        break;
+      }
+    }
+
+    if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+      return false;
+    }
+  }
+
 let vocales = [
     ["e", "enter"],
     ["i", "imes"],
@@ -14,6 +33,8 @@ let vocales = [
     ["o", "ober"],
     ["u", "ufat"],
 ]
+
+
 
 const reemplazar = (nuevoValor) => {
     mensajeFinal.innerHTML = nuevoValor;
